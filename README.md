@@ -1,54 +1,55 @@
-# React + TypeScript + Vite
+# Task Manager App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A simple and interactive task management application built with **React** and **TypeScript**. This project serves as a practical demonstration of various core concepts in front-end development, including managing state with React hooks, filtering data, handling user input, and applying styling with CSS.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **Add Tasks**: Users can input new tasks and add them to the task list.
+- **Toggle Task Completion**: Users can mark tasks as completed or pending by checking/unchecking a checkbox.
+- **Delete Tasks**: Users can remove tasks from the list by clicking the trash icon.
+- **Filter Tasks**: Users can filter tasks by their completion status (All, Completed, Pending).
+- **Responsive Design**: The app adjusts gracefully to different screen sizes, ensuring a seamless experience on both mobile and desktop.
 
-## Expanding the ESLint configuration
+## Tech Stack
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- **React**: The app is built using React, leveraging the power of its component-based architecture for efficient rendering.
+- **TypeScript**: TypeScript is used for static typing, improving code safety and providing better development experiences, especially in larger projects.
+- **CSS**: Custom CSS styling is applied to the app, ensuring a visually appealing and user-friendly interface.
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+## What I Learned
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+This project allowed me to explore and learn several important concepts in modern web development:
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+1. **React and State Management**:
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
-```
+   - Learned to use React's `useState` hook to manage application state (tasks and filter).
+   - Utilized functional components and passed down functions and data via props to child components.
+
+2. **TypeScript**:
+
+   - Introduced static typing to the project using TypeScript, ensuring better code quality and reducing runtime errors.
+   - Defined interfaces (`Task` and `FilterProps`) to clearly define the structure of data passed between components, which enhanced the maintainability of the app.
+
+3. **Event Handling**:
+
+   - Implemented functions to handle user interactions, such as adding, toggling, and deleting tasks.
+   - Learned how to pass functions as props to child components and update state based on user actions.
+
+4. **Conditional Rendering**:
+
+   - Used conditional rendering to display tasks based on the filter selected (All, Completed, Pending).
+   - Learned to handle dynamic rendering based on application state.
+
+5. **CSS Styling**:
+
+   - Applied CSS to create a clean, modern, and user-friendly interface.
+   - Worked with both global and component-level styles, using modern CSS techniques like flexbox and media queries for responsive design.
+
+6. **Component Structure and Reusability**:
+
+   - Broke down the app into small, reusable components (`TaskForm`, `TaskList`, `TaskItem`, `Filter`), promoting maintainability and scalability.
+   - Enhanced reusability by keeping components modular and focused on a single responsibility.
+
+7. **User Input and Validation**:
+   - Handled form input and validation for task creation, ensuring that only valid tasks are added to the list.
+   - Learned how to manage form inputs and control their state within React components.
